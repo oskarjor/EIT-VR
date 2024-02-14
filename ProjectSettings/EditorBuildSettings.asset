@@ -8,9 +8,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
+  - enabled: 0
     path: Assets/Samples/XR Interaction Toolkit/2.5.2/Starter Assets/DemoScene.unity
     guid: 319dafa5c80f29f428dc1e0d03f04177
+  - enabled: 1
+    path: Assets/Scenes/EscapeRoom.unity
+    guid: 3c90625e110551a41bc0a7932fb833d9
   m_configObjects:
     com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 814d68a39a33c42a68e9a1a01f2fe4a9, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 4dd2c6801fdee4d5ca8973eef4b6351a, type: 2}
