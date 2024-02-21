@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - basketball
+  - football
+  - tennis
+  - volleyball
   layers:
   - Default
   - TransparentFX
