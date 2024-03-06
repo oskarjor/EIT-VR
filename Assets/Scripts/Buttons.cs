@@ -5,10 +5,11 @@ using UnityEngine.UI;
 using TMPro;
 
 //Class for adding name and price of grocery on cashout screen when item is scanned
-public class CanvasForCashOut : MonoBehaviour
+public class Buttons : MonoBehaviour
 {
     public Transform buttonPrefab;
     public Transform table;
+    public Transform boxPrefab;
 
     public List<string> sentence1string = new List<string> () { "Jeg", "heter", "Nissanth"};
     public AudioClip sentence1word1audio, sentence1word2audio, sentence1word3audio;
@@ -17,7 +18,8 @@ public class CanvasForCashOut : MonoBehaviour
     
     float moveX = 0;
 
-    public void start(){
+    void Start(){
+        /**
         sentence1audioclips= new List<AudioClip> () { 
             sentence1word1audio, 
             sentence1word2audio, 
@@ -33,25 +35,40 @@ public class CanvasForCashOut : MonoBehaviour
         for (int i=0; i<sentence1.Count; i++){
             createButtonForWord(sentence1[i]);
         }
+        */
+
+        Debug.Log("This is a test");
+
+        createButtonForWord("hei");
+        createButtonForWord("hopp");
     }
 
     //Method for adding prefab with name and price and positioning under last scanned item
     //Adding price of item to total price
-    public void createButtonForWord(ListOfString listOfString)
+    public void createButtonForWord(string listOfString)
     {
+        Debug.Log("i metode" + listOfString);
         //string nameOfObject = scannedObject.name.Substring(0, scannedObject.name.IndexOf(" "));
         //ItemStruct parentStruct = scannedObject.GetComponent<ItemStruct>();
         //string name = parentStruct.name;
 
 
-        Transform dynamicText = (Transform)Instantiate(buttonPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+        Transform dynamicText = (Transform)Instantiate(buttonPrefab, new Vector3(buttonPrefab.position.x, buttonPrefab.position.y, buttonPrefab.position.z), Quaternion.Euler(90, 0, 0));
         dynamicText.transform.SetParent(table, false);
         dynamicText.transform.position += new Vector3(moveX, 0, 0);
-        dynamicText.gameObject.name = listOfString.word; //nameOfObject
+        dynamicText.gameObject.name = listOfString; //nameOfObject
 
-        dynamicText.transform.Find("word").gameObject.GetComponent<TextMeshPro>().text = listOfString.word;
+        dynamicText.transform.Find("Canvas").Find("word").gameObject.GetComponent<TextMeshProUGUI>().text = listOfString;
 
-        moveX -= 0.035f;
+        Transform boxGameObject = (Transform)Instantiate(boxPrefab, new Vector3(boxPrefab.position.x, boxPrefab.position.y, boxPrefab.position.z), Quaternion.identity);
+        boxGameObject.transform.SetParent(table, false);
+        boxGameObject.transform.position += new Vector3(moveX, 0, 0);
+        boxGameObject.gameObject.name = listOfString; //nameOfObject
+
+
+
+        moveX += 1f;
+
     }
 }
 
