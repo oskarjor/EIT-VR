@@ -41,8 +41,10 @@ public class Buttons : MonoBehaviour
             new ListOfString(sentence1string[5], sentence1audioclips[5])
             };
 
-        for (int i=0; i<sentence1.Count; i++){
-            createButtonForWord(sentence1[i]);
+        for (int i= sentence1.Count-1; i>-1; i--){
+            ListOfString current = sentence1[Random.Range(-1, sentence1.Count)];
+            createButtonForWord(current);
+            sentence1.Remove(current);
         }
     }
 
