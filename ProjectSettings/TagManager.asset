@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - basketball
+  - box
   layers:
   - Default
   - TransparentFX

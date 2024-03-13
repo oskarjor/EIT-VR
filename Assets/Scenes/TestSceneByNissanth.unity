@@ -529,10 +529,14 @@ MonoBehaviour:
   - Jeg
   - heter
   - Nissanth
-  sentence1word1audio: {fileID: 0}
-  sentence1word2audio: {fileID: 0}
-  sentence1word3audio: {fileID: 0}
+  sentence1word1audio: {fileID: 8300000, guid: 27db10f1ca614fe4db71e049bb8178db, type: 3}
+  sentence1word2audio: {fileID: 8300000, guid: 81ea615af6fa36b44ae1ac4145c119e1, type: 3}
+  sentence1word3audio: {fileID: 8300000, guid: 4e694c0aa2c5b8047bd9197fd866f34e, type: 3}
+  sentence1word4audio: {fileID: 8300000, guid: 6abae0be06b7f3e41a5e1e9e070909d2, type: 3}
+  sentence1word5audio: {fileID: 8300000, guid: 6ef49ad5835fa2d4cb855dc21d203878, type: 3}
+  sentence1word6audio: {fileID: 8300000, guid: 52b7bf32206c9ee4d811fa72d5dd464b, type: 3}
   sentence1audioclips: []
+  correctPositionedWords: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
