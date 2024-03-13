@@ -9,7 +9,7 @@ TagManager:
   - tennis
   - volleyball
   - box
-button
+  - hand
   layers:
   - Default
   - TransparentFX

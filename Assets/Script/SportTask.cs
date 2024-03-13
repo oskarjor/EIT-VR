@@ -27,7 +27,6 @@ public class SportTask : MonoBehaviour
         };
 
         currentSport = sports[Random.Range(0,sports.Count-1)];
-        //currentSport = sports[1];
         audioController.playSound(currentSport.nameClip);
     }
 
@@ -38,7 +37,11 @@ public class SportTask : MonoBehaviour
             currentSport.sport.GetComponent<Outline>().enabled = true;
             sports.Remove(currentSport);
             if(sports.Count == 0){
-                statusScript.task1 = true;
+                statusScript.StartNextTask();
+                Destroy(basketball);
+                Destroy(tennis);
+                Destroy(football);
+                Destroy(volleyball);
             } else {
                 currentSport = sports[Random.Range(0,sports.Count-1)];
                 audioController.playSound(currentSport.nameClip);

@@ -525,9 +525,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92cb8a81b2884af4a92de62fb6d4c2bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  task1: 0
-  task2: 0
-  task3: 0
+  scriptTask1: {fileID: 1537977099}
+  scriptTask2: {fileID: 816184953}
+  lastTaskFinished: 0
 --- !u!4 &165649806
 Transform:
   m_ObjectHideFlags: 0
@@ -1300,7 +1300,7 @@ GameObject:
   - component: {fileID: 482204360}
   m_Layer: 0
   m_Name: Left Controller
-  m_TagString: Untagged
+  m_TagString: hand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2230,13 +2230,50 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 125502, guid: ab4ced4914b68784d8bf02aba7918f90, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 816184953}
   m_SourcePrefab: {fileID: 100100000, guid: ab4ced4914b68784d8bf02aba7918f90, type: 3}
 --- !u!4 &816184951 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 420392, guid: ab4ced4914b68784d8bf02aba7918f90, type: 3}
   m_PrefabInstance: {fileID: 816184950}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &816184952 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 125502, guid: ab4ced4914b68784d8bf02aba7918f90, type: 3}
+  m_PrefabInstance: {fileID: 816184950}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &816184953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816184952}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaf86a6ff7da34e1bbaba17bd91abd5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonPrefab: {fileID: 7000254924621301382, guid: 5d8d47fb5f2ad4d23baba7bf39bd5e8b, type: 3}
+  table: {fileID: 816184951}
+  boxPrefab: {fileID: 3429295382788741858, guid: 9564b10587842ba4ea16ef3a78460ba1, type: 3}
+  statusScript: {fileID: 165649805}
+  sentence1string:
+  - Jeg
+  - heter
+  - Nissanth
+  sentence1word1audio: {fileID: 8300000, guid: 27db10f1ca614fe4db71e049bb8178db, type: 3}
+  sentence1word2audio: {fileID: 8300000, guid: 81ea615af6fa36b44ae1ac4145c119e1, type: 3}
+  sentence1word3audio: {fileID: 8300000, guid: 4e694c0aa2c5b8047bd9197fd866f34e, type: 3}
+  sentence1word4audio: {fileID: 8300000, guid: 6abae0be06b7f3e41a5e1e9e070909d2, type: 3}
+  sentence1word5audio: {fileID: 8300000, guid: 6ef49ad5835fa2d4cb855dc21d203878, type: 3}
+  sentence1word6audio: {fileID: 8300000, guid: 52b7bf32206c9ee4d811fa72d5dd464b, type: 3}
+  sentence1audioclips: []
+  gameObjectsForSentence: []
+  correctPositionedWords: 0
 --- !u!1 &823527163
 GameObject:
   m_ObjectHideFlags: 0
@@ -3971,7 +4008,7 @@ GameObject:
   - component: {fileID: 1537977099}
   m_Layer: 0
   m_Name: Right Controller
-  m_TagString: Untagged
+  m_TagString: hand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4424,7 +4461,7 @@ MonoBehaviour:
   pickVolleyball: {fileID: 8300000, guid: 85de7f293d8eadf48b74949f91f7d60a, type: 3}
   tryAgain: {fileID: 8300000, guid: 0525689347180d1469cb4330e449a7d3, type: 3}
   audioController: {fileID: 1758579429}
-  statusScript: {fileID: 0}
+  statusScript: {fileID: 165649805}
 --- !u!1001 &1546831984
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4906,7 +4943,7 @@ Transform:
   m_GameObject: {fileID: 1970970601}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.53, y: 0, z: -0.207}
+  m_LocalPosition: {x: -0.795, y: 0, z: -0.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

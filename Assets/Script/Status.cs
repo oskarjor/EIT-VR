@@ -4,25 +4,25 @@ using UnityEngine;
 
 public class Status : MonoBehaviour
 {
-    public bool task1 = false;
-    public bool task2 = false;
-    public bool task3 = false;
+    public SportTask scriptTask1;
+    public Buttons scriptTask2;
 
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int lastTaskFinished = 0;
 
-    // Update is called once per frame
-    void Update()
+    public void StartNextTask()
     {
-        if(task2){
-            //enable script for task 3
-        }
-        if(task1){
-            //enable script for task 2
+        lastTaskFinished++;
+        switch (lastTaskFinished)
+        {
+            case 1:
+                scriptTask1.enabled = false;
+                scriptTask2.enabled = true;
+                break;
+            case 2:
+                scriptTask2.enabled = false;
+                break;
+            default:
+                break;
         }
     }
 }

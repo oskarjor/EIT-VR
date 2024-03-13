@@ -10,6 +10,7 @@ public class Buttons : MonoBehaviour
     public Transform buttonPrefab;
     public Transform table;
     public Transform boxPrefab;
+    public Status statusScript;
 
     public List<string> sentence1string;
     public AudioClip sentence1word1audio, sentence1word2audio, sentence1word3audio, sentence1word4audio, sentence1word5audio, sentence1word6audio;
@@ -79,7 +80,7 @@ public class Buttons : MonoBehaviour
         if(correctPositionedWords == sentence1string.Count)
         {
             StartCoroutine(destroyObjects());
-            //set task as complete in status script
+            statusScript.StartNextTask();
         }
     }
 
