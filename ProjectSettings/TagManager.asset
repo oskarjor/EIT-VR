@@ -5,13 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - basketball
-<<<<<<< HEAD
   - football
   - tennis
   - volleyball
-=======
   - box
->>>>>>> button
+button
   layers:
   - Default
   - TransparentFX
