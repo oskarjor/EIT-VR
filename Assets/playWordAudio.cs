@@ -11,11 +11,8 @@ public class playWordAudio : MonoBehaviour
     // Update is called once per frame
     private void OnTriggerEnter(Collider other)
     {
-       
-        Debug.Log("hånd");
         if (other.tag == "hand")
         {
-            Debug.Log("hånd inni hånd");
             audioSource.Play();
         }
     }
