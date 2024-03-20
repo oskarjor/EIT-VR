@@ -22,7 +22,7 @@ public class Chatbot : MonoBehaviour
     private AudioClip clip;
     private bool isRecording;
     private float time;
-    private OpenAIApi openai = new OpenAIApi("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");
+    private OpenAIApi openai = new OpenAIApi("WRITE_YOUR_API_KEY_HERE");
 
     private List<ChatMessage> chatMessages = new List<ChatMessage>();
 
