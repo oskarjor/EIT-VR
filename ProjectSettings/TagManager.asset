@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Teacher
+  - basketball
+  - football
+  - tennis
+  - volleyball
+  - box
+  - hand
   layers:
   - Default
   - TransparentFX

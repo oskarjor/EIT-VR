@@ -23,6 +23,14 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/JapaneseSchool/Scenes/Demo.unity
     guid: a1cd650cd0dd46e4aa080252d67c344d
+    path: Assets/Scenes/EscapeRoom.unity
+    guid: 3c90625e110551a41bc0a7932fb833d9
+  - enabled: 0
+    path: Assets/Scenes/Nissanth scene.unity
+    guid: ece4e92b56b4d43838fe67959447a12c
+  - enabled: 0
+    path: Assets/Scenes/TestSceneByNissanth.unity
+    guid: 7525019cb5f6747298f38d7779f63ab8
   m_configObjects:
     com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 814d68a39a33c42a68e9a1a01f2fe4a9, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 4dd2c6801fdee4d5ca8973eef4b6351a, type: 2}
