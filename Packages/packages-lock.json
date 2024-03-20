@@ -1,5 +1,14 @@
 {
   "dependencies": {
+    "com.srcnalt.openai-unity": {
+      "version": "https://github.com/alphdevcode/OpenAI-Unity.git#feature/text-to-speech",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.nuget.newtonsoft-json": "3.2.1"
+      },
+      "hash": "da792f418f0618f323a00c90db5cc1efbe30b39a"
+    },
     "com.unity.collab-proxy": {
       "version": "2.2.0",
       "depth": 0,
@@ -71,6 +80,13 @@
     },
     "com.unity.mathematics": {
       "version": "1.2.6",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.nuget.newtonsoft-json": {
+      "version": "3.2.1",
       "depth": 1,
       "source": "registry",
       "dependencies": {},
@@ -237,6 +253,13 @@
         "com.unity.xr.core-utils": "2.1.1"
       },
       "url": "https://packages.unity.com"
+    },
+    "com.whisper.unity": {
+      "version": "https://github.com/Macoron/whisper.unity.git?path=/Packages/com.whisper.unity",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "d359e08f1fa1c9a9d78cd1a587e6cb3be837f3df"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",
