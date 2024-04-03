@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.XR.Interaction.Toolkit;
 
 //Class for adding name and price of grocery on cashout screen when item is scanned
 public class Buttons : MonoBehaviour
@@ -11,45 +12,62 @@ public class Buttons : MonoBehaviour
     public Transform table;
     public Transform boxPrefab;
     public Status statusScript;
+    public XRInteractionManager interactionManager;
+    public AudioController audioController;
+    public AudioClip task2;
 
     public List<string> sentence1string;
+    public List<string> sentence2string;
+    public List<string> sentence3string;
+
     public AudioClip sentence1word1audio, sentence1word2audio, sentence1word3audio, sentence1word4audio, sentence1word5audio, sentence1word6audio;
-    
+    public AudioClip sentence2word1audio, sentence2word2audio, sentence2word3audio, sentence2word4audio, sentence2word5audio, sentence2word6audio, sentence2word7audio;
+    public AudioClip sentence3word1audio, sentence3word2audio, sentence3word3audio, sentence3word4audio, sentence3word5audio, sentence3word6audio;
+
     public List<AudioClip> sentence1audioclips;
+    public List<AudioClip> sentence2audioclips;
+    public List<AudioClip> sentence3audioclips;
+
     public List<ListOfString> sentence1;
+    public List<ListOfString> sentence2;
+    public List<ListOfString> sentence3;
+
     public List<GameObject> gameObjectsForSentence;
-    public int correctPositionedWords = 0;
     
+    public int correctPositionedWords = 0;
     float moveX = 0;
     int count = 0;
+    int currentSentence = 0;
 
-    void Start(){
-        
-        sentence1audioclips= new List<AudioClip> () { 
-            sentence1word1audio, 
-            sentence1word2audio, 
+    void Start()
+    {
+        sentence1audioclips= new List<AudioClip> () {
+            sentence1word1audio,
+            sentence1word2audio,
             sentence1word3audio,
             sentence1word4audio,
             sentence1word5audio,
             sentence1word6audio
         };
 
-        sentence1string = new List<string>() { "Hvordan", "går", "det", "med", "barnet", "mitt?" };
+        sentence1string = new List<string>() { "Hvordan", "gaar", "det", "med", "barnet", "mitt?" };
 
-        sentence1 = new List<ListOfString> () { 
-            new ListOfString(sentence1string[0], sentence1audioclips[0]),
-            new ListOfString(sentence1string[1], sentence1audioclips[1]),
-            new ListOfString(sentence1string[2], sentence1audioclips[2]),
-            new ListOfString(sentence1string[3], sentence1audioclips[3]),
-            new ListOfString(sentence1string[4], sentence1audioclips[4]),
-            new ListOfString(sentence1string[5], sentence1audioclips[5])
-            };
+        sentence1 = new List<ListOfString> () {
+            new ListOfString(sentence1string[0], sentence1word1audio),
+            new ListOfString(sentence1string[1], sentence1word2audio),
+            new ListOfString(sentence1string[2], sentence1word3audio),
+            new ListOfString(sentence1string[3], sentence1word4audio),
+            new ListOfString(sentence1string[4], sentence1word5audio),
+            new ListOfString(sentence1string[5], sentence1word6audio)
+        };
 
         for (int i= sentence1.Count-1; i>-1; i--){
-            ListOfString current = sentence1[Random.Range(0, sentence1.Count-1)];
-            createButtonForWord(current);
-            sentence1.Remove(current);
-        }
+             ListOfString current = sentence1[Random.Range(0, sentence1.Count-1)];
+             createButtonForWord(current);
+             sentence1.Remove(current);
+         }
+
+        audioController.playSound(task2);
     }
 
     public void createButtonForWord(ListOfString listOfString)
@@ -61,6 +79,8 @@ public class Buttons : MonoBehaviour
         dynamicText.gameObject.GetComponent<AudioSource>().clip = listOfString.wordPronunciation;
         dynamicText.gameObject.GetComponent<ButtonInBox>().buttonsScript = GetComponent<Buttons>();
         dynamicText.transform.Find("Canvas").Find("word").gameObject.GetComponent<TextMeshProUGUI>().text = listOfString.word;
+        
+        dynamicText.gameObject.GetComponent<XRGrabInteractable>().interactionManager = interactionManager;
 
         Transform boxGameObject = (Transform)Instantiate(boxPrefab, new Vector3(boxPrefab.position.x, boxPrefab.position.y, boxPrefab.position.z), Quaternion.identity);
         boxGameObject.transform.SetParent(table, false);
@@ -70,7 +90,7 @@ public class Buttons : MonoBehaviour
         gameObjectsForSentence.Add(boxGameObject.gameObject);
         gameObjectsForSentence.Add(dynamicText.gameObject);
 
-        moveX += 1f;
+        moveX += 0.4f;
         count++;
     }
 
@@ -86,8 +106,9 @@ public class Buttons : MonoBehaviour
 
     IEnumerator destroyObjects()
     {
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(1);
         foreach (GameObject go in gameObjectsForSentence) Destroy(go);
+        gameObjectsForSentence = new List<GameObject>() {};
     }
 }
 

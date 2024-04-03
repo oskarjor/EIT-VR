@@ -12,7 +12,15 @@ public class AudioController : MonoBehaviour
     }
 
     public void playSound(AudioClip audioClip){
-        audioSource.Stop();
+        StartCoroutine(waitBeforePlaying(audioClip));
+    }
+
+    IEnumerator waitBeforePlaying(AudioClip audioClip)
+    {
+        while (audioSource.isPlaying)
+        {
+            yield return null;
+        }
         audioSource.clip = audioClip;
         audioSource.Play();
     }

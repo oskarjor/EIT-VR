@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731703, g: 0.13414727, b: 0.12107852, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -506,6 +506,7 @@ GameObject:
   m_Component:
   - component: {fileID: 165649806}
   - component: {fileID: 165649805}
+  - component: {fileID: 165649807}
   m_Layer: 0
   m_Name: Status
   m_TagString: Untagged
@@ -525,7 +526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92cb8a81b2884af4a92de62fb6d4c2bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scriptTask1: {fileID: 1537977099}
+  scriptTask1: {fileID: 165649807}
   scriptTask2: {fileID: 816184953}
   lastTaskFinished: 0
 --- !u!4 &165649806
@@ -543,6 +544,32 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &165649807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165649804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19d982a6faca43b42b1b4d7e0cd22384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  basketball: {fileID: 101313306}
+  football: {fileID: 833541882}
+  tennis: {fileID: 1037758430}
+  volleyball: {fileID: 847565147}
+  taskDescription: {fileID: 8300000, guid: 182d1d5fd37734641a3c19d6ef4a47cd, type: 3}
+  pickFootball: {fileID: 8300000, guid: d5d9e9f5d08903c4eaa40b7dfc323e2f, type: 3}
+  pickBasketball: {fileID: 8300000, guid: 0d7a11c29fce9a9448f22d57bc7f4a31, type: 3}
+  pickTennis: {fileID: 8300000, guid: ec291b8541ebfad489fc4a1538f1c7ca, type: 3}
+  pickVolleyball: {fileID: 8300000, guid: 239bd6959d16a394eb81d25ca816fc29, type: 3}
+  tryAgain: {fileID: 8300000, guid: 0525689347180d1469cb4330e449a7d3, type: 3}
+  audioController: {fileID: 1758579429}
+  statusScript: {fileID: 165649805}
+  psLeft: {fileID: 482204363}
+  psRight: {fileID: 1537977099}
 --- !u!1001 &192404203
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1298,6 +1325,7 @@ GameObject:
   - component: {fileID: 482204355}
   - component: {fileID: 482204362}
   - component: {fileID: 482204360}
+  - component: {fileID: 482204363}
   m_Layer: 0
   m_Name: Left Controller
   m_TagString: hand
@@ -1730,6 +1758,19 @@ CapsuleCollider:
   m_Height: 0.15
   m_Direction: 2
   m_Center: {x: 0, y: -0.04, z: -0.03}
+--- !u!114 &482204363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482204353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4ce9924907edce498f99131e3a64c13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  st: {fileID: 165649807}
 --- !u!1 &509037769
 GameObject:
   m_ObjectHideFlags: 0
@@ -2261,17 +2302,37 @@ MonoBehaviour:
   table: {fileID: 816184951}
   boxPrefab: {fileID: 3429295382788741858, guid: 9564b10587842ba4ea16ef3a78460ba1, type: 3}
   statusScript: {fileID: 165649805}
+  interactionManager: {fileID: 929255606}
+  audioController: {fileID: 1758579429}
+  task2: {fileID: 8300000, guid: d2a6ed5d1be0c7f4ba0e4538fea33ce7, type: 3}
   sentence1string:
   - Jeg
   - heter
   - Nissanth
+  sentence2string: []
+  sentence3string: []
   sentence1word1audio: {fileID: 8300000, guid: 27db10f1ca614fe4db71e049bb8178db, type: 3}
   sentence1word2audio: {fileID: 8300000, guid: 81ea615af6fa36b44ae1ac4145c119e1, type: 3}
   sentence1word3audio: {fileID: 8300000, guid: 4e694c0aa2c5b8047bd9197fd866f34e, type: 3}
   sentence1word4audio: {fileID: 8300000, guid: 6abae0be06b7f3e41a5e1e9e070909d2, type: 3}
   sentence1word5audio: {fileID: 8300000, guid: 6ef49ad5835fa2d4cb855dc21d203878, type: 3}
   sentence1word6audio: {fileID: 8300000, guid: 52b7bf32206c9ee4d811fa72d5dd464b, type: 3}
+  sentence2word1audio: {fileID: 8300000, guid: ed65e072c0c33b34a83d738817a58146, type: 3}
+  sentence2word2audio: {fileID: 8300000, guid: 214063207758ca0419c009cc72368d91, type: 3}
+  sentence2word3audio: {fileID: 8300000, guid: d6848b2d94ceac245bafafaa65b04dd1, type: 3}
+  sentence2word4audio: {fileID: 8300000, guid: b0ba3203a6927f34c954bf327eca9d90, type: 3}
+  sentence2word5audio: {fileID: 8300000, guid: 203d30fce6839494b9302e8f73f3e98e, type: 3}
+  sentence2word6audio: {fileID: 8300000, guid: e037a8439287a0f4cba6be36fc00e1d6, type: 3}
+  sentence2word7audio: {fileID: 8300000, guid: 5a8c1bd227a54cd468bf3abd8d9619af, type: 3}
+  sentence3word1audio: {fileID: 8300000, guid: ea23e7f03bc08bb4585dcabb9e3ac27d, type: 3}
+  sentence3word2audio: {fileID: 8300000, guid: e652b6f0f2fff384e8a4ea8cdadf9de3, type: 3}
+  sentence3word3audio: {fileID: 8300000, guid: b863ab8edfe071c4491e5bbe1b9d56e0, type: 3}
+  sentence3word4audio: {fileID: 8300000, guid: 5bc7c8a487bf3674c8b67eaafb633f71, type: 3}
+  sentence3word5audio: {fileID: 8300000, guid: 5a8c1bd227a54cd468bf3abd8d9619af, type: 3}
+  sentence3word6audio: {fileID: 8300000, guid: b3bf4aa14e7052943ba724953a955c93, type: 3}
   sentence1audioclips: []
+  sentence2audioclips: []
+  sentence3audioclips: []
   gameObjectsForSentence: []
   correctPositionedWords: 0
 --- !u!1 &823527163
@@ -4447,21 +4508,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1537977089}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19d982a6faca43b42b1b4d7e0cd22384, type: 3}
+  m_Script: {fileID: 11500000, guid: c4ce9924907edce498f99131e3a64c13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  basketball: {fileID: 101313306}
-  football: {fileID: 833541882}
-  tennis: {fileID: 1037758430}
-  volleyball: {fileID: 847565147}
-  taskDescription: {fileID: 8300000, guid: b45f3324157dba94293dfa2934871387, type: 3}
-  pickFootball: {fileID: 8300000, guid: 6dab367c47ad2c54b9827ad6a4c8318f, type: 3}
-  pickBasketball: {fileID: 8300000, guid: 6dab367c47ad2c54b9827ad6a4c8318f, type: 3}
-  pickTennis: {fileID: 8300000, guid: ec291b8541ebfad489fc4a1538f1c7ca, type: 3}
-  pickVolleyball: {fileID: 8300000, guid: 85de7f293d8eadf48b74949f91f7d60a, type: 3}
-  tryAgain: {fileID: 8300000, guid: 0525689347180d1469cb4330e449a7d3, type: 3}
-  audioController: {fileID: 1758579429}
-  statusScript: {fileID: 165649805}
+  st: {fileID: 165649807}
 --- !u!1001 &1546831984
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4943,7 +4993,7 @@ Transform:
   m_GameObject: {fileID: 1970970601}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.795, y: 0, z: -0.28}
+  m_LocalPosition: {x: -0.767, y: 0, z: -0.285}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
