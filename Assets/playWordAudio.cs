@@ -14,6 +14,7 @@ public class playWordAudio : MonoBehaviour
         if (other.tag == "hand")
         {
             audioSource.Play();
+            Destroy(this);
         }
     }
 }

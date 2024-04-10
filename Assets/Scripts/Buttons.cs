@@ -50,7 +50,7 @@ public class Buttons : MonoBehaviour
             sentence1word6audio
         };
 
-        sentence1string = new List<string>() { "Hvordan", "gaar", "det", "med", "barnet", "mitt?" };
+        sentence1string = new List<string>() { "Hvordan", "går", "det", "med", "barnet", "mitt?" };
 
         sentence1 = new List<ListOfString> () {
             new ListOfString(sentence1string[0], sentence1word1audio),
