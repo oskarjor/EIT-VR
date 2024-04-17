@@ -16,13 +16,13 @@ public class Chatbot : MonoBehaviour
     public bool hasInteractedWithPlayer = false;
 
     
-    private readonly string fileName = "output.wav";
+    private readonly string fileName = "out.wav";
     private readonly int duration = 8;
     
     private AudioClip clip;
     private bool isRecording;
     private float time;
-    private OpenAIApi openai = new OpenAIApi("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");
+    private OpenAIApi openai = new OpenAIApi("WRITE-API-KEY-HERE");
 
     private List<ChatMessage> chatMessages = new List<ChatMessage>();
 
@@ -86,7 +86,7 @@ public class Chatbot : MonoBehaviour
         
         var req = new CreateAudioTranscriptionsRequest
         {
-            FileData = new FileData() {Data = data, Name = "audio.wav"},
+            FileData = new FileData() {Data = data, Name = "temp.wav"},
             Model = "whisper-1",
             Language = "no"
         };
